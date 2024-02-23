@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+<!-- Home page start -->
+
+        <!-- carousel start -->
+        <div class="carousel-container">
+            <img class="slide" src="{% static 'asset\images\carouselimg1.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\carouselimg2.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\carouselimg3.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset/images/carouselimg4.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset/images/carouselimg5.jpg' %}" alt="">
+            <div class="carousel-nav">
+                <button class="prev" onclick="goPrev()"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="next" onclick="goNext()"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <h1>Home</h1>
+            <h4>Let your Property be our Priority</h4>
+        </div>
+        <!-- carousel end -->
+
+        <!-- shelter category start -->
+        <div class="shelter-categories">
+            <h5>SHELTER CATEGORIES</h5>
+            <h1>Explore Our Categories & Places</h1>
+            <div class="categorylogo-container">
+                <a href="/shelterpropertytype/1"><i style="color: black;" class="ri-landscape-line"></i>Land</a>
+                <a href="/shelterpropertytype/2"><i style="color: black;" class="ri-home-7-line"></i>Residential</a>
+                <a href="/shelterpropertytype/3"><i style="color: black;" class="ri-building-line"></i>Commercial</a>
+                <a href="/shelterpropertytype/4"><i style="color: black;" class="ri-building-3-line"></i>Industrial</a>
+            </div>
+
+            <div class="cities-container">
+                <div class="cities">
+                    <a href="">
+                        <span>New York</span>
+                        <button>200 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>London</span>
+                        <button>150 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>Chicago</span>
+                        <button>130 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>Illinois</span>
+                        <button>100 Properties</button>
+                    </a>
+                </div>
+
+                <div class="cities">
+                    <a href="">
+                        <span>New York</span>
+                        <button>200 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>London</span>
+                        <button>150 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>Chicago</span>
+                        <button>130 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>Illinois</span>
+                        <button>100 Properties</button>
+                    </a>
+                </div>
+
+                <div class="cities">
+                    <a href="">
+                        <span>New York</span>
+                        <button>200 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>London</span>
+                        <button>150 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>Chicago</span>
+                        <button>130 Properties</button>
+                    </a>
+                    <a href="">
+                        <span>Illinois</span>
+                        <button>100 Properties</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- shelter category end -->
+
+        <!-- featured category start -->
+        <div class="featured-category">
+            <h5>SHELTER CATEGORIES</h5>
+            <h1>Explore Our Categories & Places</h1>
+            <div class="featured-div">
+                {% for i in properties %}
+                <a class="featured-div-a" href="" style="margin-left: 10px;">
+                    <div class="featuredproperty-card">
+                        <img src="{{i.pimage.url}}" alt="" height="190px">
+                        <span>$ {{i.price}}</span>
+                        <h3>{{i.firstname}} {{i.middlename}} {{i.lastname}}</h3>
+                        <h2>{{i.propertyname}}</h2>
+                        <p>
+                            <i id="i" style="color: black; font-size: 20px;" class="ri-map-pin-2-fill"></i> New York &nbsp;
+                            <strong>{% if i.ptype2 == 1%} Sale {% else %} Rent {% endif %}</strong>
+                        </p> <br>
+                        <p>
+                            <i id="i" style="color: black; font-size: 20px;" class="ri-hotel-bed-fill"></i>&nbsp;{{i.beds}}&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <i id="i" style="color: black; font-size: 20px;" class="ri-landscape-line"></i> {{i.area}} sqft <br>
+                        </p>
+                        <p>
+                           {{i.description}}
+                        </p>
+                    </div>
+                </a>
+                {% endfor %}
+                
+
+            </div>
+        </div>
+        <!-- featured category end -->
+
+        <!-- video link start -->
+        <div class="video-link-container">
+            <img src="{% static 'asset\images\videolinkimg.jpg' %}" alt="">
+            <h2>Modern Housing</h2>
+            <h4>We offer Best Deals for you</h4>
+            <a href=""><button><i class="ri-play-fill"></i></button></a>
+        </div>
+        <!-- video link end -->
+
+        <script src="{% static 'asset/js/carousel.js' %}"></script>
+        <!-- home page end -->
+
+{% endblock 'main' %}

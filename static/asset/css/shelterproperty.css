@@ -1,0 +1,302 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.filter1-container{
+    width: 90%;
+    height: max-content;
+    position: absolute;
+    top: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* .filter1-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+} */
+/* 
+.filter1-container{
+    display: flex;
+    width: 90%;
+    height: max-content;
+    border: none;
+} */
+
+.form-div{
+    width: 20%;
+    border-right: 1px solid #999999;
+    padding: 20px;
+    height: 100%;
+    background-color: white;
+}
+
+.form-div a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.form-div a:hover{
+    color: green;
+}
+
+
+.form-div dt{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-div dd{
+    padding: 2px;
+    display:flex;
+    align-items: center;
+    border: none;
+}
+
+.form-div i{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+#form-div-inp{
+    padding: 0px 0px 0px 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-div-search{
+    width: 20%;
+    height: 100%;
+}
+
+#form-divbtn{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #5ea51d;
+}
+
+
+.buyrentbtn-container{
+    border: none;
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.filter1-container p{
+    text-align: center;
+    color: white;
+}
+
+.filter1-container button{
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    box-shadow: 0px 0px 5px 1px grey;
+    transition: transform 0.3s;
+}
+
+.buyrentbtn-container button:hover{
+    transform: scale(1.08);
+}
+
+.buybtn{
+    background-color: #5ea51d;
+}
+
+.rentbtn{
+    background-color: rgb(235, 8, 8);
+}
+
+/* .filter2-container{
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    border: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.filter2-container a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.filter2-container i{
+    font-weight: bold;
+    color: white;
+}
+
+.filter2-container a:hover{
+    color: darkgreen;
+}
+
+.filter{
+    width: fit-content;
+    height: max-content;
+    border: none;
+    margin: 5px;
+}
+
+.filter h3{
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .filter1-container h2{
+        width: 350px;
+    }
+    
+    .filter2-container{
+        flex-direction: column;
+    }
+
+} */
+
+
+/* Property container */
+
+.property-container{
+    width: 100%;
+    border: none;
+    height: max-content;
+    padding: 200px 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #f7f7f7;
+}
+
+.property-card{
+    width: 280px;
+    height: 580px;
+    border: none;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: box-shadow 0.3s, transform 0.2s;
+    margin: 0px 5px 30px 5px;
+}
+
+.property-card:hover{
+    box-shadow: 0px 0px 8px 1px grey;
+    transform: scale(1.05)
+}
+
+.property-card img{
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    height: 190px;
+}
+
+.property-card span{
+    color: white;
+    background-color: #5ea51d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 170px;
+    top: 150px;
+}
+
+.property-card small{
+    margin-bottom: 20px;
+}
+.property-card h2{
+    color: #5ea51d;
+    margin-bottom: 0px;
+}
+
+.property-card p{
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+.property-card #i{
+    color: black;
+    font-size: 16px;
+}
+
+#inquirebtn, #booknowbtn{
+    cursor: pointer;
+    padding: 8px;
+    width: 120px;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: white;
+    border: none;
+    transition: opacity 0.3s;
+}
+
+#inquirebtn:hover, #booknowbtn:hover{
+    opacity: 0.8;
+}
+
+#inquirebtn{
+    background-color: rgb(235, 8, 8);
+}
+
+#booknowbtn{
+    background-color: #5ea51d;
+}
+
+
+@media only screen and (max-width:968px){
+    .filter1-container{
+        flex-direction: column;
+        width: 90%;
+        background-color: white;
+        top: 850px;
+    }
+
+    .form-div{
+        width: 90%;
+        border: none;
+    }
+
+    .form-div-search{
+        width: 100%;
+    }
+
+    .property-container{
+        margin-top: 700px;
+    }
+}

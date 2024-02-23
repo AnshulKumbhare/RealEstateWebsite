@@ -1,0 +1,154 @@
+*{
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+
+/* LOGIN PAGE */
+
+.bg-container{
+    background-image: url("../images/loginregisterbg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top ;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    min-height: 100vh;
+    z-index: -1;
+    transition:  filter 1s ease-in;
+    filter: blur(2px);
+}
+
+.loginregister-nav{
+    height: 95px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logocontainer{
+    width: 20%;
+    height: 90px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logocontainer a{
+    text-decoration: none;
+    border: none;
+    transition: transform 0.5s;
+}
+
+.logocontainer span{
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    transition: transform 0.5s;
+}
+
+.logocontainer a:hover{
+    transform: scale(1.1);
+}
+
+
+.login-container{
+    border: 1px solid grey;
+    width: max-content;
+    padding: 20px;
+    height: max-content;
+    border: none;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 10px 2px grey; */  
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.login-container span, .register-container span{
+    font-size: 30px;
+    font-weight: 500;
+    width: 70%;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.login-container table, .register-container table{
+    width: 100%;
+    margin-top: 15px;
+}
+
+#inp-signin{
+    padding: 10px;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#signin-btn{
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    border-radius: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#signin-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.login-container small, .register-container small{
+    font-size: 16px;
+    margin: 20px;
+}
+
+.login-container a, .register-container a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    color: red;
+    transition: text-decoration 0.3s;
+}
+
+.login-container a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+@media only screen and (max-width: 768px){
+    .register-container{
+        width: 90vw;
+    }
+
+    .register-container table{
+        width: 95%;
+        font-size: 14px;
+    }
+
+    #inp-signin{
+        width: 100%;
+        outline: none;
+        font-size: 14px;
+        border: 1px solid;
+        border-radius: 5px;
+    }
+    
+}

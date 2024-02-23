@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+<!-- booking page start -->
+<div class="booking-container">
+    <h5>BOOKING</h5>
+    <h1>Book now at Just Rs 1,00,000 /-</h1>
+    {% for i in bproperty %}
+    <div class="booking">
+        <img src="{{i.pid.pimage.url}}" alt="">
+        <div class="booking-info">
+            <h2>{{i.pid.propertyname}}</h2>
+            <small>{{i.pid.firstname}} {{i.pid.middlename}} {{i.pid.lastname}}</small>
+            <span><strong>Booking ID: {{i.bookingid}}</strong></span>
+            <span id="price">Rs {{i.pid.price}}/-</span>
+            {% if i.pid.ptype2 == 1 %} 
+            <span style="color: green;" id="ptype2">Sale</span>
+            {% endif %}
+            {% if i.pid.ptype2 == 2 %}
+            <span style="color: red;" id="ptype2">Rent</span>
+            {% endif %}
+            {% if i.pid.ptype1 == 1 %}
+            <span id="ptype1">Land</span>
+            {% elif i.pid.ptype1 == 2 %}
+            <span id="ptype1">Residential</span>
+            {% elif i.pid.ptype1 == 3 %}
+            <span id="ptype1">Commercial</span>
+            {% else %}
+            <span id="ptype1">Industrial</span>
+            {% endif %}
+            <p>
+                {% if i.pid.beds > 0 %}
+                <span>Beds: {{i.pid.beds}}</span>
+                {% endif %}
+                <span>Area: {{i.pid.area}} sqft</span>
+                <strong>Property Description: </strong> {{i.pid.description}}
+            </p>
+            <h4>Contact Details:</h4>
+            <p>
+                <strong style="color: red;">{{i.pid.mob1}}</strong><strong>/</strong><strong style="color: red;">{{i.pid.mob2}}</strong> <br>
+                {{i.pid.email}} <br>
+                <strong>Address:</strong> {{i.pid.address}} <br>
+                <strong>City:</strong> {{i.pid.city}} <br>
+            </p>
+            <div class="bookinbtn">
+                <a href="/removebooking/{{i.id}}"><button>Remove</button></a>
+                <button id="rzp-button1">Pay Now</button>
+            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+            <script>
+            var options = {
+                "key": "rzp_test_9TH7HLFyaq2ysI", // Enter the Key ID generated from the Dashboard
+                "amount": "{{data.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Shelter.in", //your business name
+                "description": "Test Transaction",
+                "image": "https://example.com/your_logo",
+                "order_id": "{{data.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+                // "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+                //     "name": "Gaurav Kumar", //your customer's name
+                //     "email": "gaurav.kumar@example.com",
+                //     "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
+                // },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            document.getElementById('rzp-button1').onclick = function(e){
+                rzp1.open();
+                e.preventDefault();
+            }
+            </script>
+                <a href="/shelterproperty"><button>See More</button></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- booking page end -->
+
+{% endblock 'main' %}

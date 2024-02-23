@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+<!-- submit property page start -->
+        <!-- carousel start -->
+        <div class="carousel-container">
+            <img class="slide" src="{% static 'asset\images\submitproperty\submitpropertycarouselimg1.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\submitproperty\submitpropertycarouselimg2.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\submitproperty\submitpropertycarouselimg3.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\submitproperty\submitpropertycarouselimg4.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\submitproperty\submitpropertycarouselimg5.jpg' %}" alt="">
+            <div class="carousel-nav">
+                <button class="prev" onclick="goPrev()"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="next" onclick="goNext()"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <h1>Property</h1>
+            <h4>Submit your property details to get the best deal</h4>
+        </div>
+        <!-- carousel end -->
+
+
+        <div class="submitproperty-container">
+            <h5>SUBMIT YOUR PROPERTY</h5>
+            <h1>We Will Provide You With The Best Deal</h1>
+
+            <div class="submitproperty-form">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h2 style="text-align: center; margin-bottom: 20px;">Property Details</h2>
+                    {{ form.as_div }}
+                    <table border="0px" cellspacing="25px" width="100%">
+                        <!-- <tr>
+                            <th colspan="5" align="center"><h2>Property Details</h2></th>
+                        </tr> -->
+                        {% if success %}
+                        <tr>
+                            <td colspan="5" align="center" style="color: green;">{{success}}</td>
+                        </tr>
+                        {% endif %}
+                        <!--
+                        <tr>
+                            <td>First Name: </td>
+                            <td colspan="5"><input type="text" name="sname" id="sp-inp" placeholder="Your Name">{{form.firstname}}</td>
+                        </tr>
+                        <tr>
+                            <td>Middle Name: </td>
+                            <td colspan="5"><input type="text" name="smiddlename" id="sp-inp" placeholder="Middle Name"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name: </td>
+                            <td colspan="5"><input type="text" name="slastname" id="sp-inp" placeholder="Surname"></td>
+                        </tr>
+                        <tr>
+                            <td>Email: </td>
+                            <td colspan="5"><input type="email" name="smail" id="sp-inp" placeholder="Email: xyz@domain.com"></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile 1: </td>
+                            <td colspan="2"><input type="number" name="smob1" id="sp-inp" placeholder="Mobile 1"></td>
+                            <td>Mobile 2: </td>
+                            <td colspan="2"><input type="number" name="smob2" id="sp-inp" placeholder="Mobile 2"></td> 
+                        </tr>
+                        <tr>
+                            <td>Address: </td>
+                            <td colspan="5"><textarea name="saddress" id="sp-inp" cols="30" rows="10" placeholder="Enter your Address"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>City: </td>
+                            <td colspan="5"><input type="text" name="scity" id="sp-inp" placeholder="Enter Location"></td>
+                        </tr>
+                        <tr>
+                            <td>Property Name: </td>
+                            <td colspan="4"><input type="text" name="spname" id="sp-inp" placeholder="Enter Property Name"></td>
+                        </tr>
+                        <tr>
+                            <td>Property Type: </td>
+                            <td>
+                                <select name="spropertytype" id="sp-inp">
+                                    <option value="">Select an Option</option>
+                                    <option value="Land">Land</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Residential">Residential</option>
+                                    <option value="Industrial">Industrial</option>
+                                </select>
+                            </td>
+                            <td >
+                                <select name="ssaleorrent" id="sp-inp">
+                                    <option value="">Select an option</option>
+                                    <option value="Sale">Sale</option>
+                                    <option value="Rent">Rent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of Beds: </td>
+                            <td><input type="number" name="noofbeds" id="sp-inp" placeholder="Enter number of beds"></td>
+                            <td>Area (in sqft): </td>
+                            <td><input type="number" name="sarea" id="sp-inp" placeholder="Enter Area"></td>
+                        </tr>
+                        <tr>
+                            <td>Upload Image: </td>
+                            <td colspan="5"><input type="file" name="simage" id=""></td>
+                        </tr>
+                        <tr>
+                            <td>Property Description: </td>
+                            <td colspan="5"><textarea name="spropertydescription" id="sp-inp" cols="30" rows="10" placeholder="Describe property in not more than 100 charecters"></textarea></td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="6" align="center"><input type="submit" name="sp-btn" id="sp-btn" value="Submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+
+        <script src="{% static 'asset/js/carousel.js' %}"></script>
+        <!-- submit property page end -->
+
+{% endblock 'main' %}

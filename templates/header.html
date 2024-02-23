@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Shelter Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="{% static 'asset/css/header.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/home.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/about.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/contact.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/agents.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/submitproperty.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/booking.css' %}">
+    </head>
+    <body>
+
+        <!-- header 1 start -->
+        <div class="header1-container">
+
+            <div class="infodiv">
+                <i class="ri-map-2-line"></i>
+                <p>
+                    <span>Free Call</span> +1 234 456 78910 <br>
+                    <small>Call Us Now 24/7 Customer Support</small>
+                </p>
+            </div>
+
+            <div class="infodiv">
+                <i class="ri-send-plane-fill"></i>
+                <p>
+                    Our Location <br>
+                    <small>Suite 721 New York NY 10016</small>
+                </p>
+            </div>
+
+            <div class="infodiv">
+                <i class="ri-link"></i>
+                <p>
+                    <span>Connect </span>&nbsp;with us <br>
+                    <small><a href="">LINKEDIN</a><a href="">GITHUB</a><a href="">INSTAGRAM</a></small>
+                </p>
+            </div>
+
+        </div>
+        <!-- header 2 end -->
+
+        <!-- header 2 start -->
+
+        <div class="header2-container">
+            <span>
+                Shelter
+                <small>MoveIn Now!</small>
+            </span>
+
+            <div class="navdiv">
+                <a id="navdiv-a" href="/home">Home</a>
+                <a id="navdiv-a" href="/about">About</a>
+                <a id="navdiv-a" href="/shelterproperty">Properties</a>
+                <a id="navdiv-a" href="/agents">Agents</a>
+                <a id="navdiv-a" href="/contact">Contact</a>
+                <a href="/submitproperty"><button class="submitproperty-btn">Submit a Property</button></a>
+            </div>
+
+            <div class="navdiv2">
+                {% if user.is_authenticated %}
+                <a href="/booked"><i class="ri-contract-line"></i></a>  <!--Your bookings-->
+                <a href="/logout"><i class="ri-logout-circle-r-line"></i></a> <!--logout-->
+                {% else %}
+                <a href="/login"><i class="ri-user-3-line"></i></a> <!--login-->
+                <a href="/register"><i class="ri-user-add-fill"></i></a> <!--Register-->
+                {% endif %}
+            </div>
+
+        </div>
+
+        <!-- header 2  end -->
+    </body>
+</html>

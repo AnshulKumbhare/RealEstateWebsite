@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+<!-- About us Start -->
+
+        <!-- carousel start -->
+        <div class="carousel-container">
+            <img class="slide" src="{% static 'asset\images\aboutus\carouselaboutusimg1.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\aboutus\carouselaboutusimg2.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\aboutus\carouselaboutusimg3.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\aboutus\carouselaboutusimg4.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\aboutus\carouselaboutusimg5.jpg' %}" alt="">
+            <div class="carousel-nav">
+                <button class="prev" onclick="goPrev()"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="next" onclick="goNext()"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <h1>About</h1>
+            <h4>We deliver the best for you.</h4>
+        </div>
+        <!-- carousel end -->
+        
+        <!-- about section start -->
+        <div class="aboutus-container">
+            <h5>ABOUT US</h5>
+            <h1>Shelter A Real Estate Company</h1>
+            <div class="aboutus-info-container">
+                <img src="{% static 'asset\images\aboutus\aboutusimg1.jpg' %}" alt="">
+                <div class="about">
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur quisquam corporis, recusandae perspiciatis culpa quae mollitia quia corrupti doloremque incidunt accusantium. Cumque libero, incidunt vel distinctio quidem dolorem esse?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum molestiae in praesentium nemo, consectetur repellat minus nostrum, sunt voluptatum mollitia ipsum harum quos doloribus ipsam voluptatibus, deleniti asperiores dolore saepe?
+                    </p>
+                    <div class="stats-container">
+                        <p>
+                            50 <br>
+                            <span>YEARS OF EXPERIANCE</span>
+                        </p>
+                        <p>
+                            210<small>k+</small> <br>
+                            <span>TOTAL PROPERTIES</span>
+                        </p>
+                        <p>
+                           450 <br>
+                           <span>QUALIFIED REALTORS</span> 
+                        </p>
+                        <p>
+                            100 <br>
+                            <span>TOTAL BRANCHES</span>
+                        </p>
+                    </div>
+                    <img src="{% static 'asset\images\aboutus\aboutusimg2.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- about section end -->
+
+         <!-- video link start -->
+         <div class="video-link-container">
+            <img src="{% static 'asset\images\videolinkimg.jpg' %}" alt="">
+            <h2>About Us</h2>
+            <a href=""><button><i class="ri-play-fill"></i></button></a>
+        </div>
+        <!-- video link end -->
+
+        <!-- get in touch start -->
+        <div class="getintouch-container">
+            <div class="getintouch">
+                <h2>Find Best Place For Living</h2>
+                <a href="/contact"><button>Get in Touch</button></a>
+            </div>
+        </div>
+        <!-- get in touch end -->
+
+        <!-- testimonials start -->
+        <div class="testimonial-container">
+            <h5>TESTIMONIAL</h5>
+            <h1>Clients We Help</h1>
+
+            {% for i in testimonies %}
+            <div class="testimony-card">
+                <i class="ri-double-quotes-l"></i>
+                <p>
+                    {{i.testimony}}
+                    <br>
+                    <br>
+                    <strong>{{i.tpname}}</strong><br>
+                    <small>{{i.position}}, {{i.companyname}}</small>
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- testimonials end -->
+
+        <script src="{% static 'asset/js/carousel.js' %}"></script>
+        <!-- About Us end -->
+
+{% endblock 'main' %}

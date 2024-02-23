@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+<!-- contact page start -->
+        <!-- carousel start -->
+        <div class="carousel-container">
+            <img class="slide" src="{% static 'asset\images\contact\contactcarouselimg1.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\contact\contactcarouselimg2.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\contact\contactcarouselimg3.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\contact\contactcarouselimg4.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\contact\contactcarouselimg5.jpg' %}" alt="">
+            <div class="carousel-nav">
+                <button class="prev" onclick="goPrev()"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="next" onclick="goNext()"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <h1>Contact</h1>
+            <h4>Your Problems are ours to Solve</h4>
+        </div>
+        <!-- carousel end -->
+
+        <div class="contactus-container">
+            <div class="contactus-form">
+                <h3>Contact Us</h3>
+                <p>We are open for any suggestions or just to have a chat</p>
+                <div class="companyinfo">
+                    <p>
+                        <strong>Address: </strong><br>
+                        198 West 21th Street, Suite 721 New York NY 10016
+                    </p>
+                    <p>
+                        <strong>Email: </strong><br>
+                        mail@domain.com
+                    </p>
+                    <p>
+                        <strong>Contact: </strong><br>
+                        + 1235 2355 98 
+                    </p>
+                </div>
+                {% if errmsg %}
+                <span style="color: red;">
+                    {{errmsg}}
+                </span>
+                {% endif %}
+                {% if success %}
+                <span style="color: green;">
+                    {{success}} {% if pname %} {{pname}}{% endif %}
+                </span>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <table border="0px" cellspacing="30px">
+                        <tr>
+                            <td><input type="text" name="pname" id="contact-inp" placeholder="Name"></td>
+                            <td><input type="text" name="pmiddlename" id="contact-inp" placeholder="Middle Name"></td>
+                            <td><input type="text" name="psurname" id="contact-inp" placeholder="Surname"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="email" name="pmail" id="contact-inp" placeholder="Email: xyz@domain.com"></td>
+                            <td><input type="number" name="pmob1" id="contact-inp" placeholder="Mobile Number 1"></td>
+                            <td><input type="number" name="pmob2" id="contact-inp" placeholder="Mobile Number 2 (Optional)"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><textarea name="paddress" id="contact-inp" cols="30" rows="3" placeholder="Enter your Address"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><textarea name="pmsg" id="contact-inp" cols="30" rows="5" placeholder="Enter your message here"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="3"><input type="submit" name="btn" id="contactus-btn" value="Submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        <script src="{% static 'asset/js/carousel.js' %}"></script>
+        <!-- contact page end -->
+
+{% endblock 'main' %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+{% load static %}
+
+<!-- agents page start -->
+        <!-- carousel start -->
+        <div class="carousel-container">
+            <img class="slide" src="{% static 'asset\images\agents\agentscarouselimg1.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\agents\agentscarouselimg2.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\agents\agentscarouselimg3.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\agents\agentscarouselimg4.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\agents\agentscarouselimg5.jpg' %}" alt="">
+            <div class="carousel-nav">
+                <button class="prev" onclick="goPrev()"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="next" onclick="goNext()"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <h1>Agents</h1>
+            <h4>We bring you the Best</h4>
+        </div>
+        <!-- carousel end -->
+
+        <div class="agents-container">
+            {% for i in agents %}
+            {% if i.is_active == 1 %}
+            <div class="agent-card">
+                <img src="{{i.agentimage.url}}" alt="">
+                <div class="agentinfo-container">
+                    <h2>{{i.agentname}}</h3>
+                    <h5>{{i.year}} in industry</h5>
+                    <p>
+                        LISTING &nbsp;&nbsp;&nbsp; {{i.psold}} PROPERTIES <br>
+                    </p>
+                    <span id="agent-social">
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-google-fill"></i></a>
+                    </span>
+                </div>
+            </div>
+            {% else %}
+            <div style="filter: grayscale();" class="agent-card">
+                <img style="transform: scale(1);" src="{{i.agentimage.url}}" alt="">
+                <div class="agentinfo-container">
+                    <h2>{{i.agentname}}</h3>
+                    <h5>{{i.year}} in industry</h5>
+                    <p>
+                        LISTING &nbsp;&nbsp;&nbsp; {{i.psold}} PROPERTIES <br>
+                    </p>
+                    <span id="agent-social">
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-google-fill"></i></a>
+                    </span>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+
+        <script src="{% static 'asset/js/carousel.js' %}"></script>
+        <!-- agents page end -->
+
+{% endblock 'main' %}

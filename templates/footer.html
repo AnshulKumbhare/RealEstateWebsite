@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'asset/css/footer.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="{% static 'asset/css/shelterproperty.css' %}">
+    </head>
+    <body>
+
+        <!-- footer start -->
+
+        <div class="footer-container">
+            <div class="footerinfo">
+                <span>Shelter.com</span>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur <br><br>
+                    <a href=""><i class="ri-twitter-fill"></i></a>
+                    <a href=""><i class="ri-facebook-fill"></i></a>
+                    <a href=""><i class="ri-instagram-fill"></i></a>
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <span>Offers</span>
+                <p>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/shelterproperty">Properties</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/agents">Agents</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="">Locations</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/contact">Client Support</a><br>
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <span>Company</span>
+                <p>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/home">Home</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/about">About</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/contact">Contact Us</a><br>
+                    {% if user.is_authenticated %}
+                    <i class="ri-arrow-drop-right-line"></i><a href="/logout">Sign Out</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="">Your Bookings</a>
+                    {% else %}
+                    <i class="ri-arrow-drop-right-line"></i><a href="/login">Sign In</a><br>
+                    <i class="ri-arrow-drop-right-line"></i><a href="/register">Register</a><br>
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <span>Have Questions?</span>
+                <p>
+                    <i class="ri-map-2-line"></i>
+                    <small>203 Fake St. Mountain View, San Francisco, California, USA</small> 
+                </p>
+                <p>
+                    <i class="ri-phone-fill"></i>
+                    <small>+91 9558545854</small>
+                </p>
+                <p>
+                    <i class="ri-send-plane-fill"></i>
+                    <small>emailid@domain.com</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer2-container">
+            Created by Anshul Sandeep Kumbhare
+        </div>
+
+        <!-- footer end -->
+    </body>
+</html>

@@ -1,0 +1,126 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.booking-container{
+    width: 100%;
+    border: none;
+    margin: 30px auto;
+    height: max-content;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.booking-container h5{
+    color: #5ea51d;
+    font-size: 16px;
+}
+
+.booking-container h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.booking{
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    height: max-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.booking img{
+    margin-top: 30px;
+    width: 35%;
+    border-radius: 15px;
+    min-width: 390px;
+}
+
+.booking-info{
+    width: 50%;
+    border: none;
+    padding: 10px;
+    height: max-content;
+}
+
+.booking-info small{
+    color: #353535;
+    margin-left: 10px;
+}
+
+.booking-info span{
+    margin-left: 10px;
+    display: block;
+}
+
+.booking-info p{
+    margin-bottom: 10px;
+}
+
+#price{
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.bookinbtn{
+    width: max-content;
+    height: max-content;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.bookinbtn button{
+    padding: 10px 25px;
+    font-size: 18px;
+    background-color: #5ea51d;
+    color: white;
+    border:2px solid #5ea51d;
+    border-radius: 2px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.bookinbtn button:hover{
+    color: #5ea51d;
+    background-color: white;
+    
+}
+
+@media only screen and (max-width: 1000px){
+    .booking{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .booking img{
+        width: 90%;
+    }
+
+    .booking-info{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .bookinbtn{
+        width: 100%;
+    }
+}

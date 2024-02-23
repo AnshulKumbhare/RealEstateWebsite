@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+
+        <!-- properties page start -->
+        <!-- carousel start -->
+        <div class="carousel-container">
+            <img class="slide" src="{% static 'asset\images\Property\propertycaraouselimg1.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\Property\propertycaraouselimg2.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\Property\propertycaraouselimg3.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\Property\propertycaraouselimg4.jpg' %}" alt="">
+            <img class="slide" src="{% static 'asset\images\Property\propertycaraouselimg5.jpg' %}" alt="">
+            <div class="carousel-nav">
+                <button class="prev" onclick="goPrev()"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="next" onclick="goNext()"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+            <h1>Property</h1>
+            <h4>Book Now at just $1,000</h4>
+        </div>
+        <!-- carousel end -->
+
+        <div class="filter1-container">
+            <!-- <h2>"The best time to buy a home is always five years ago."</h2> -->
+            <div class="buyrentbtn-container">
+                <p>
+                    <a href="/buyproperty"><button class="buybtn">Buy Properties</button></a>
+                    <a href="/rentproperty"><button class="rentbtn">Rent Properties</button></a>
+                </p>
+            </div>
+
+            <div class="form-div">
+                <dl>
+                    <dt><strong>PROPERTY TYPE</strong></dt>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/shelterpropertytype/1">Land</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/shelterpropertytype/2">Residential</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/shelterpropertytype/3">Commercial</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/shelterpropertytype/4">Industrial</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="form-div">
+                <dl>
+                    <dt><strong>Area (in sqft)</strong></dt>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/sortareabelow/2000">Below 2,000 </a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/sortarea/4000">2,000 to 4,000 </a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/sortarea/8000">4,000 to 8,000 </a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/sortarea/10000">8,000 to 10,000</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/sortareaabove/10000">Above 10,000 </a>
+                    </dd>
+                </dl>
+            </div>
+            <!-- <div class="form-div">
+                <dl>
+                    <dt><strong>LOCATION</strong></dt>
+                    <dd><i class="ri-map-pin-line"></i><a href="">Mumbai</a></dd>
+                    <dd><i class="ri-map-pin-line"></i><a href="">Pune</a></dd>
+                    <dd><i class="ri-map-pin-line"></i><a href="">Delhi</a></dd>
+                    <dd><i class="ri-map-pin-line"></i><a href="">Chennai</a></dd>
+                    <dd><i class="ri-map-pin-line"></i><a href="">Kolkata</a></dd>
+                </dl>
+            </div> -->
+            <div class="form-div">
+                <dl>
+                    <dt><strong>PRICE LIMIT</strong></dt>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="/plimitbelow/100000">Below 1,00,000</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="">1,00,000 to 10,00,000</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="">10,00,000 to 50,00,000</a>
+                    </dd>
+                    <dd>
+                        <i class="ri-arrow-right-s-line"></i><a href="">50,00,000 to 1CR</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="form-div">
+                <dt><strong>NUMBER OF BEDS</strong></dt>
+                <dd>
+                    <i class="ri-arrow-right-s-line"></i><a href="/sortbeds/0">0</a>
+                </dd>
+                <dd>
+                    <i class="ri-arrow-right-s-line"></i><a href="/sortbeds/1">1</a>
+                </dd>
+                <dd>
+                    <i class="ri-arrow-right-s-line"></i><a href="/sortbeds/2">2</a>
+                </dd>
+                <dd>
+                    <i class="ri-arrow-right-s-line"></i><a href="/sortbeds/3">3</a>
+                </dd>
+            </div>
+        </div>
+
+        <div class="property-container">
+            {% for i in property %}
+            <div class="property-card">
+                <img src="{{i.pimage.url}}" alt="">
+                <span>$ {{i.price}}</span>
+                <h3>{{i.firstname}}  {{i.lastname}}</h3>
+                <small>Seller</small>
+                <h2>{{i.propertyname}}</h2>
+                <p>
+                    <i id="i" style="color: black; font-size: 20px;" class="ri-map-pin-2-fill"></i> {{i.city}} &nbsp;
+                    {% if i.ptype2 == 1 %}
+                    <strong style="color: green;">Sale</strong>
+                    {% endif %}
+                    {% if i.ptype2 == 2 %}
+                    <strong style="color: red;">Rent</strong>
+                    {% endif %}
+                </p>
+                <p>
+                    <i id="i" style="color: black; font-size: 20px;" class="ri-hotel-bed-fill"></i>&nbsp;{{i.beds}}&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <i id="i" style="color: black; font-size: 20px;" class="ri-landscape-line"></i> {{i.area}} sqft <br>
+                </p>
+                <p>
+                    {{i.description}}                    
+                </p>
+                <a href="/contact"><button id="inquirebtn">Inquire</button></a>
+                {% if user.is_authenticated %}
+                <a href="/booking/{{i.id}}"><button id="booknowbtn">Book Now</button></a>
+                {% else %}
+                <a href="/login"><button id="booknowbtn">Book Now</button></a>
+                {% endif %}
+                {% if success %}
+                <p>
+                    {{success}}
+                </p>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+        <script src="{% static 'asset/js/carousel.js' %}"></script>
+        <!-- properties page end -->
+
+{% endblock 'main' %}
